@@ -3,195 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>副業、調べても試してもうまくいかない人へ｜稼ぎ方の裏側メモ</title>
-<meta name="description" content="副業を調べても試しても、うまくいかない人へ。止まるところと抜け方を短くまとめました。AI・在宅・副業初心者向け。保存用チェックリストつき。">
-<meta property="og:title" content="副業、調べても試してもうまくいかない人へ">
-<meta property="og:description" content="止まっている場所を、1つ外すだけでいい。保存用チェックリストつき。">
-<meta property="og:type" content="article">
-<meta name="twitter:card" content="summary">
+<title>副業、調べるだけで終わっていませんか？｜稼ぎ方の裏側メモ</title>
+<meta name="description" content="副業を調べても試しても、うまくいかない人へ。止まるところと抜け方、保存用チェックリスト。AI・在宅・副業初心者向け。">
+<meta property="og:title" content="副業、調べるだけで終わっていませんか？">
+<meta property="og:description" content="止まっている場所を、1つ外すだけ。保存用チェックリストつき。">
+<meta property="og:image" content="https://rynmoca-afk.github.io/fukugyo-memo/hero.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.jpg">
-<script>document.documentElement.classList.add('js')</script>
 <style>
-/* 設計：UI UX Pro Max（Minimalism & Swiss／Motion 8／Density 2）＋ Apple の製品ページ */
-:root{--fg:#1d1d1f;--mut:#6e6e73;--sub:#86868b;--bg:#fff;--soft:#f5f5f7;--line:#d2d2d7;--blue:#0071e3;--link:#0066cc;--or:#ff5a1f;--ease:cubic-bezier(.2,.8,.2,1)}
+/* 手本：日本の社会人スクールの申し込みページ（濃紺の見出し・青い帯・ピンクの申し込みボタン・吹き出し） */
+:root{--navy:#14306b;--blue:#1e4fa3;--sky:#e8f3fb;--sky2:#d3e9f8;--pink:#f0457a;--pink2:#ff6a5c;--tx:#28324a;--mut:#5d6780;--line:#cfdcec}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,BlinkMacSystemFont,"SF Pro Text","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
-a{color:var(--link);text-decoration:none}
-a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
-.display{font:700 clamp(38px,9vw,64px)/1.1 -apple-system,"SF Pro Display","Hiragino Sans",sans-serif;letter-spacing:-.015em;margin:0}
-.title{font:700 clamp(28px,6.5vw,44px)/1.2 -apple-system,"SF Pro Display","Hiragino Sans",sans-serif;letter-spacing:-.01em;margin:0 0 20px}
-.eyebrow{font-size:14px;font-weight:600;color:var(--or);margin:0 0 12px;letter-spacing:.04em}
-
-/* 上の進み具合バー＋すりガラスのナビ */
-.bar{position:fixed;inset:0 auto auto 0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--blue);z-index:30}
-.nav{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;font-weight:600;transform:translateY(-110%);transition:transform .45s var(--ease)}
-.nav.on{transform:none}
-.nav img{width:22px;height:22px;border-radius:50%;vertical-align:-5px;margin-right:6px}
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:44px;background:var(--blue);color:#fff;border-radius:980px;padding:0 18px;font-weight:600;font-size:15px;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s}
-.pill:hover{transform:scale(1.04);box-shadow:0 10px 28px rgba(0,113,227,.3)}
-.pill:active{transform:scale(.97)}
-.nav .pill{min-height:34px;padding:0 14px;font-size:13px}
-
-/* 1. ヒーロー */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 24px 64px;position:relative;overflow:hidden}
-.hero .by{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sub);margin-bottom:28px}
-.hero .by img{width:28px;height:28px;border-radius:50%}
-.hero .lead{font-size:clamp(19px,4.6vw,24px);color:var(--mut);margin:24px 0 0;line-height:1.55}
-.hero .pr{font-size:12px;color:var(--sub);margin-top:36px}
-.glow{position:absolute;width:70vmax;height:70vmax;left:50%;top:55%;translate:-50% -50%;background:radial-gradient(closest-side,rgba(255,90,31,.14),rgba(0,113,227,.08) 55%,transparent 70%);filter:blur(10px);z-index:-1;pointer-events:none}
-.cue{position:absolute;bottom:calc(24px + env(safe-area-inset-bottom,0px));font-size:12px;color:var(--sub);display:flex;flex-direction:column;align-items:center;gap:6px}
-.cue i{width:1px;height:28px;background:linear-gradient(var(--sub),transparent);animation:cue 1.6s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-.ch{display:inline-block;will-change:transform,opacity}
-
-/* 2. 問題（スクロールで一語ずつ明るくなる） */
-.problem{background:#000;color:#fff}
-.problem .pin{min-height:100svh;display:flex;align-items:center}
-.problem p{font:700 clamp(30px,7.5vw,54px)/1.3 -apple-system,"SF Pro Display","Hiragino Sans",sans-serif;letter-spacing:-.01em;margin:0}
-.problem .wd{color:#fff;opacity:.18;transition:opacity .2s}
-.problem .hl{color:var(--or)}
-
-/* 3. 止まる場所 */
-.walls{padding:120px 0 40px}
-.wall{display:grid;grid-template-columns:56px 1fr;gap:6px 18px;padding:28px 0;border-top:1px solid var(--line)}
-.wall .n{font:700 40px/1 -apple-system,"SF Pro Display",sans-serif;color:var(--or);font-variant-numeric:tabular-nums}
-.wall h3{margin:0;font-size:21px;line-height:1.45}
-.wall p{grid-column:2;margin:0;color:var(--mut)}
-
-/* 4. 保存用メモ */
-.memo{background:var(--soft);border-radius:28px;padding:36px 28px;margin:72px 0}
-.memo h2{font-size:22px;margin:0 0 4px}
-.memo .hint{font-size:13px;color:var(--sub);margin:0 0 18px}
-.memo button{all:unset;cursor:pointer;display:flex;align-items:center;gap:14px;width:100%;min-height:48px;padding:6px 0;font-size:17px;line-height:1.5}
-.box{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;transition:background .25s var(--ease),border-color .25s}
-.box svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none;stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .35s var(--ease) .05s}
-.memo button[aria-pressed=true] .box{background:var(--blue);border-color:var(--blue)}
-.memo button[aria-pressed=true] .box svg{stroke-dashoffset:0}
-.memo button[aria-pressed=true] span:last-child{color:var(--sub);text-decoration:line-through}
-.meter{height:6px;border-radius:6px;background:#e5e5ea;margin-top:18px;overflow:hidden}
-.meter i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--blue);transition:transform .5s var(--ease)}
-
-/* 5. 紹介（PR） */
-.cta{background:#000;color:#f5f5f7;text-align:center;padding:120px 24px 110px;border-radius:0}
-.cta .eyebrow{color:#ff8a5c}
-.cta .title{color:#fff}
-.cta .sub{color:#a1a1a6;max-width:560px;margin:0 auto 36px}
-.card{max-width:560px;margin:0 auto;background:linear-gradient(180deg,#1c1c1e,#111);border:1px solid #2c2c2e;border-radius:28px;padding:34px 26px;text-align:left}
-.card .tag{display:inline-block;font-size:12px;font-weight:700;color:#000;background:#ff8a5c;border-radius:6px;padding:2px 8px}
-.card h3{font-size:22px;line-height:1.45;margin:14px 0 8px;color:#fff}
-.card p{color:#a1a1a6;font-size:15px;margin:0 0 22px}
-.card .pill{width:100%;min-height:52px;font-size:17px}
-.fine{font-size:12px;color:#86868b;margin-top:18px}
-footer{font-size:12px;line-height:1.8;color:var(--sub);padding:28px 24px calc(40px + env(safe-area-inset-bottom,0px));text-align:center}
-
-/* JSが動く時だけ最初は隠す（動かない環境では普通に読める） */
-.js .rv{opacity:0;transform:translateY(32px)}
-@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}.cue i{animation:none}.problem .wd{opacity:1}html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--tx);font:16px/1.85 "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;font-feature-settings:"palt"}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+.in{max-width:1000px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 1px 0 #eef1f6;padding-top:env(safe-area-inset-top,0px)}
+header .in{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--navy);font-size:15px;text-decoration:none}
+.logo img{width:30px;height:30px;border-radius:50%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:999px;color:#fff;font-weight:800;text-decoration:none;background:linear-gradient(90deg,var(--pink),var(--pink2));box-shadow:0 4px 0 #c42e5e;transition:transform .15s,box-shadow .15s}
+.btn:after{content:"›";font-size:20px;line-height:1}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 #c42e5e}
+header .btn{min-height:40px;padding:0 18px;font-size:14px;box-shadow:0 3px 0 #c42e5e}
+.hero{background:linear-gradient(180deg,#fff,var(--sky))}
+.hero img{width:100%;max-width:1100px;margin:0 auto}
+.hero .cta{text-align:center;padding:8px 20px 44px}
+.pr{font-size:12px;color:var(--mut);text-align:center;margin:10px 0 0}
+section{padding:64px 0}
+.h2{font-size:clamp(22px,5vw,30px);line-height:1.5;font-weight:800;color:var(--blue);text-align:center;margin:0 0 28px}
+.panel{background:#fff;border-radius:6px;padding:36px 24px;box-shadow:0 2px 0 var(--line)}
+.band{background:#5bb7e0;color:#fff;font-weight:800;text-align:center;font-size:clamp(17px,4vw,22px);padding:6px 12px;margin:0 0 24px}
+.worry{display:grid;grid-template-columns:1fr minmax(220px,420px) 1fr;gap:16px;align-items:center}
+.bubble{position:relative;border:2px solid #9cc4ea;border-radius:12px;background:#fff;padding:12px 16px;font-size:15px;line-height:1.7;margin:10px 0}
+.bubble.l:after,.bubble.r:after{content:"";position:absolute;top:50%;width:14px;height:14px;background:#fff;border:2px solid #9cc4ea;transform:translateY(-50%) rotate(45deg)}
+.bubble.l:after{right:-9px;border-left:0;border-bottom:0}
+.bubble.r:after{left:-9px;border-right:0;border-top:0}
+.key{margin:32px auto 0;max-width:760px;border:4px solid #6fd8c8;padding:22px 18px;text-align:center;font-weight:700;font-size:clamp(16px,3.8vw,20px);line-height:1.8}
+.key em{font-style:normal;color:var(--pink)}
+.key u{text-decoration:none;border-bottom:2px solid var(--tx)}
+.walls{background:var(--sky)}
+.wall{display:flex;gap:16px;background:#fff;border-radius:6px;padding:20px;margin:14px 0;box-shadow:0 2px 0 var(--line)}
+.num{flex:none;width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center;line-height:1.1;text-align:center}
+.num b{display:block;font-size:20px}
+.wall h3{margin:0 0 4px;color:var(--navy);font-size:18px;line-height:1.5}
+.wall p{margin:0;color:var(--mut);font-size:15px}
+.check{max-width:760px;margin:0 auto;border:2px solid var(--blue);border-radius:8px;overflow:hidden}
+.check h3{margin:0;background:var(--blue);color:#fff;text-align:center;padding:10px;font-size:18px}
+.check ul{list-style:none;margin:0;padding:18px 20px}
+.check li{padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line)}
+.check li:last-child{border:0}
+.check li:before{content:"";position:absolute;left:2px;top:13px;width:20px;height:20px;border:2px solid var(--blue);border-radius:4px}
+.offer{background:linear-gradient(180deg,var(--sky),var(--sky2))}
+.card{max-width:760px;margin:0 auto;background:#fff;border-radius:8px;padding:28px 22px;text-align:center;box-shadow:0 3px 0 var(--line)}
+.tag{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:800;padding:2px 10px;border-radius:3px}
+.card h3{color:var(--navy);font-size:clamp(18px,4.4vw,22px);line-height:1.5;margin:12px 0 8px}
+.card p{color:var(--mut);font-size:14px;margin:0 0 20px;text-align:left}
+footer{background:var(--navy);color:#c9d4ea;font-size:12px;line-height:1.9;text-align:center;padding:24px 20px calc(28px + env(safe-area-inset-bottom,0px))}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.fade.on{opacity:1;transform:none}
+@media (max-width:720px){.worry{grid-template-columns:1fr}.worry .side{display:contents}.bubble.l:after,.bubble.r:after{display:none}}
+@media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
-<div class="bar" id="bar" aria-hidden="true"></div>
-<nav class="nav" id="nav" aria-label="ページ上部"><span><img src="icon.jpg" alt="">稼ぎ方の裏側メモ</span><a class="pill" href="#pr">教材を見る</a></nav>
+<header><div class="in"><a class="logo" href="#"><img src="icon.jpg" alt="">稼ぎ方の裏側メモ</a><a class="btn" href="#offer">続きを見る</a></div></header>
 
-<header class="hero">
-  <div class="glow" aria-hidden="true"></div>
-  <div class="by"><img src="icon.jpg" alt="">稼ぎ方の裏側メモ ・ 2026年10月31日</div>
-  <h1 class="display" id="h">副業、調べても試しても<br>うまくいかない人へ。</h1>
-  <p class="lead" id="lead">止まっている場所を、1つ外すだけでいい。</p>
-  <p class="pr">このページは紹介（PR）を含みます。紹介リンクから購入されると、運営者に紹介料が入ります。</p>
-  <div class="cue" aria-hidden="true">スクロール<i></i></div>
-</header>
+<div class="hero">
+  <h1 style="position:absolute;left:-9999px">副業、調べるだけで終わっていませんか？止まっている場所を、1つ外すだけ。</h1>
+  <img src="hero.jpg" alt="副業、調べるだけで終わっていませんか？止まっている場所を、1つ外すだけ。" width="1600" height="893">
+  <div class="cta"><a class="btn" href="#walls">止まる場所を見る</a><p class="pr">このページは紹介（PR）を含みます。紹介リンクから申し込みがあると、運営者に紹介料が入ります。</p></div>
+</div>
 
-<section class="problem" aria-label="いちばん多い悩み">
-  <div class="pin wrap"><p id="say">X や Threads の副業の投稿を毎日読んでいます。いちばん多い悩みは、稼ぎ方がわからない、ではありません。<span class="hl">調べすぎて、決められない。</span>情報が足りないのではなく、多すぎて止まっている。</p></div>
-</section>
-
-<main class="wrap">
-  <section class="walls" aria-labelledby="wt">
-    <p class="eyebrow rv">よく止まる場所</p>
-    <h2 class="title rv" id="wt">新しい方法を足すより、<br>1つ外すほうが早い。</h2>
-    <div class="wall rv"><span class="n" data-n="1">0</span><h3>候補を比べ続けて、始めていない。</h3><p>先に「週に何時間使えるか」を数字で書く。できる副業は2〜3個まで減ります。</p></div>
-    <div class="wall rv"><span class="n" data-n="2">0</span><h3>怪しいものが怖くて動けない。</h3><p>始める前にお金を払わせる、仕事の中身を1行で言えない、「誰でも簡単」が並ぶ。この3つだけ避ければ十分です。</p></div>
-    <div class="wall rv"><span class="n" data-n="3">0</span><h3>ノウハウを集めて終わる。</h3><p>1つ決めたら、2週間は他を見ない。比べるのは続けてからで間に合います。</p></div>
-    <div class="wall rv"><span class="n" data-n="4">0</span><h3>1週間で止まる。</h3><p>稼いだ額ではなく、作業した時間をメモする。数字が出る前に「続いた」を残すと戻ってこられます。</p></div>
-    <div class="wall rv"><span class="n" data-n="5">0</span><h3>AIを使っているのに楽にならない。</h3><p>「表にして」「穴を3つ挙げて」「案を3つ出して」と頼むと、考える作業ごと渡せます。</p></div>
-  </section>
-
-  <section class="memo rv" aria-labelledby="mt">
-    <h2 id="mt">保存用メモ</h2>
-    <p class="hint">タップでチェック。この端末にだけ残ります。週1回だけ見返してください。</p>
-    <div id="checks">
-      <button aria-pressed="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span>週に使える時間を数字で書いた</span></button>
-      <button aria-pressed="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span>やることを1つに決めた（2週間は他を見ない）</span></button>
-      <button aria-pressed="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span>先にお金を払う案件は外した</span></button>
-      <button aria-pressed="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span>毎日の作業時間をつけている</span></button>
-      <button aria-pressed="false"><span class="box"><svg viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span>AIには「表にして／穴を挙げて」と頼んでいる</span></button>
+<section style="background:var(--sky)"><div class="in">
+  <h2 class="h2 fade">副業を「調べてみた」だけで、止まっていませんか？</h2>
+  <div class="panel fade">
+    <p class="band">やらなきゃいけないのは、わかっているけれど…</p>
+    <div class="worry">
+      <div class="side"><p class="bubble l">動画も記事も見たのに、<br>何から始めるか決められない。</p><p class="bubble l">怪しい話が多すぎて、<br>どれが本物かわからない。</p></div>
+      <img src="worry.jpg" alt="ノートPCの前で悩む二人のイラスト" width="1200" height="896" loading="lazy">
+      <div class="side"><p class="bubble r">始めても、<br>1週間で止まってしまう。</p><p class="bubble r">ChatGPTを使っているのに、<br>全然楽にならない。</p></div>
     </div>
-    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
-  </section>
-</main>
+    <p class="key">あなたのセンスの問題ではなく、<br><em>「止まりやすい場所」</em>と<em>「外し方」</em>を<u>知らないだけ</u>です。</p>
+  </div>
+</div></section>
 
-<section class="cta" id="pr" aria-labelledby="ct">
-  <p class="eyebrow rv">ひとりで決めきれない人へ（PR）</p>
-  <h2 class="title rv" id="ct">迷い続けるより、<br>1冊を最後までやる。</h2>
-  <p class="sub rv">手順がまとまった教材を1つ決めて、最後までやる。そのほうが早い人もいます。今 Brain でよく読まれているものを1つだけ。</p>
-  <div class="card rv">
+<section class="walls" id="walls"><div class="in">
+  <h2 class="h2 fade">よく止まる場所と、外し方</h2>
+  <div class="wall fade"><span class="num">POINT<b>01</b></span><div><h3>候補を比べ続けて、始めていない</h3><p>先に「週に何時間使えるか」を数字で書く。できる副業は2〜3個まで減ります。</p></div></div>
+  <div class="wall fade"><span class="num">POINT<b>02</b></span><div><h3>怪しいものが怖くて動けない</h3><p>始める前にお金を払わせる、仕事の中身を1行で言えない、「誰でも簡単」が並ぶ。この3つだけ避ければ十分です。</p></div></div>
+  <div class="wall fade"><span class="num">POINT<b>03</b></span><div><h3>ノウハウを集めて終わる</h3><p>1つ決めたら、2週間は他を見ない。比べるのは続けてからで間に合います。</p></div></div>
+  <div class="wall fade"><span class="num">POINT<b>04</b></span><div><h3>1週間で止まる</h3><p>稼いだ額ではなく、作業した時間をメモする。数字が出る前に「続いた」を残すと戻ってこられます。</p></div></div>
+  <div class="wall fade"><span class="num">POINT<b>05</b></span><div><h3>AIを使っているのに楽にならない</h3><p>「表にして」「穴を3つ挙げて」「案を3つ出して」と頼むと、考える作業ごと渡せます。</p></div></div>
+</div></section>
+
+<section><div class="in">
+  <div class="check fade"><h3>保存用チェックリスト（週1回だけ見返す）</h3><ul>
+    <li>週に使える時間を数字で書いた</li>
+    <li>やることを1つに決めた（2週間は他を見ない）</li>
+    <li>先にお金を払う案件は外した</li>
+    <li>毎日の作業時間をつけている</li>
+    <li>AIには「表にして／穴を挙げて」と頼んでいる</li>
+  </ul></div>
+</div></section>
+
+<section class="offer" id="offer"><div class="in">
+  <h2 class="h2 fade">ひとりで決めきれない人へ</h2>
+  <div class="card fade">
     <span class="tag">PR・紹介</span>
     <h3>【インスタ×AI×note】1日30分で2000万売り上げた全手順を公開</h3>
-    <p>税込 20,400円（Brain）。売上の数字は販売者の申告です。中身と返金の条件は、販売ページで確かめてから決めてください。</p>
-    <a class="pill" href="https://brmk.io/r8YGc9" rel="sponsored noopener" target="_blank">販売ページを見る</a>
-    <p class="fine">紹介リンクです。購入されると運営者に紹介料が入ります。収入を約束するものではありません。</p>
+    <p>手順が1冊にまとまった Brain の教材です（税込 20,400円）。売上の数字は販売者の申告です。中身と返金の条件は、販売ページで確かめてから決めてください。</p>
+    <a class="btn" href="https://brmk.io/r8YGc9" rel="sponsored noopener" target="_blank">販売ページを見る</a>
+    <p class="pr">紹介リンクです。購入されると運営者に紹介料が入ります。収入を約束するものではありません。</p>
   </div>
-</section>
+</div></section>
 
-<footer>稼ぎ方の裏側メモ（X・Threads・Instagram・TikTok：@22iikata）<br>紹介（PR）を含みます。</footer>
+<footer>稼ぎ方の裏側メモ（X・Threads・Instagram・TikTok：@22iikata）<br>当ページは紹介（PR）を含みます。</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-(() => {
-  // 保存用メモ（動きの有無に関係なく使う）
-  const btns = [...document.querySelectorAll('#checks button')], meter = document.getElementById('meter');
-  const save = () => meter.style.transform = `scaleX(${btns.filter(b => b.getAttribute('aria-pressed') === 'true').length / btns.length})`;
-  btns.forEach((b, i) => {
-    try { if (localStorage.getItem('chk' + i)) b.setAttribute('aria-pressed', 'true'); } catch (e) {}
-    b.onclick = () => { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); try { on ? localStorage.setItem('chk' + i, 1) : localStorage.removeItem('chk' + i); } catch (e) {} save(); };
-  });
-  save();
-
-  const nav = document.getElementById('nav'), hero = document.querySelector('.hero');
-  new IntersectionObserver(([e]) => nav.classList.toggle('on', !e.isIntersecting), { threshold: 0 }).observe(hero);
-
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!window.gsap || reduce) { document.documentElement.classList.remove('js'); return; }
-  gsap.registerPlugin(ScrollTrigger);
-
-  // 進み具合バー
-  gsap.to('#bar', { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: true } });
-
-  // 見出し：1文字ずつ奥から浮き上がる（短い見出しだけ）
-  const h = document.getElementById('h');
-  h.setAttribute('aria-label', h.textContent);
-  h.innerHTML = h.innerHTML.split('<br>').map(line => [...line].map(c => `<span class="ch" aria-hidden="true">${c}</span>`).join('')).join('<br>');
-  gsap.from('.ch', { opacity: 0, y: 24, rotateX: -50, filter: 'blur(6px)', duration: .7, stagger: .022, ease: 'expo.out', delay: .15 });
-  gsap.from('#lead', { opacity: 0, y: 16, duration: .8, ease: 'expo.out', delay: .75 });
-  gsap.to('.glow', { scale: 1.25, opacity: .4, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 1 } });
-
-  // 黒い面：固定して、スクロールに合わせて一語ずつ明るくする
-  const say = document.getElementById('say');
-  say.innerHTML = say.innerHTML.replace(/(<span class="hl">[^<]*<\/span>)|([^<、。]+[、。]?)/g, (m, hl, w) => hl ? hl.replace('class="hl"', 'class="wd hl"') : `<span class="wd">${w}</span>`);
-  gsap.to('.problem .wd', { opacity: 1, stagger: .5, ease: 'none', scrollTrigger: { trigger: '.problem', start: 'top top', end: '+=140%', scrub: .8, pin: '.problem .pin' } });
-
-  // 下から現れる＋番号のカウントアップ
-  gsap.utils.toArray('.rv').forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: .9, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' } }));
-  document.querySelectorAll('.wall .n').forEach(n => { const o = { v: 0 }; gsap.to(o, { v: +n.dataset.n, duration: .8, ease: 'power2.out', snap: { v: 1 }, onUpdate: () => n.textContent = o.v, scrollTrigger: { trigger: n, start: 'top 85%' } }); });
-
-  // 紹介カード：少し傾いた状態から正面へ
-  gsap.from('.card', { rotateX: 14, scale: .94, transformPerspective: 900, ease: 'none', scrollTrigger: { trigger: '.card', start: 'top 95%', end: 'top 55%', scrub: 1 } });
-  addEventListener('load', () => ScrollTrigger.refresh());
-})();
+// 見えたらふわっと出す（それ以上の演出はしない）
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

@@ -11,22 +11,29 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="icon.jpg">
 <style>
-body{margin:0;background:#fff;color:#222;font:17px/2 "Hiragino Mincho ProN","Yu Mincho",serif}
-main{max-width:620px;margin:0 auto;padding:40px 22px 80px}
-.by{display:flex;align-items:center;gap:10px;font:14px/1.5 -apple-system,"Hiragino Sans",sans-serif;color:#666;margin-bottom:28px}
-.by img{width:36px;height:36px;border-radius:50%}
-.pr{font:12px/1.6 -apple-system,"Hiragino Sans",sans-serif;color:#888;border-left:3px solid #ddd;padding-left:10px;margin:0 0 32px}
-h1{font:700 26px/1.6 "Hiragino Mincho ProN","Yu Mincho",serif;margin:0 0 8px;letter-spacing:.02em}
-h2{font:700 19px/1.7 -apple-system,"Hiragino Sans",sans-serif;margin:48px 0 8px}
-p{margin:0 0 1.2em}
-.mark{background:linear-gradient(transparent 62%,#ffd9c7 62%)}
-ol{padding-left:1.4em}
-ol li{margin:.5em 0}
-.memo{font:15px/1.9 -apple-system,"Hiragino Sans",sans-serif;background:#faf7f2;padding:18px 20px;margin:28px 0}
-.memo p{margin:.2em 0}
-a{color:#c4370f}
-.link{font:600 16px/1.6 -apple-system,"Hiragino Sans",sans-serif}
-footer{font:12px/1.8 -apple-system,"Hiragino Sans",sans-serif;color:#999;margin-top:64px;border-top:1px solid #eee;padding-top:16px}
+/* Apple の製品ページ風：大きな見出し・余白・グレーの面・青いリンク */
+body{margin:0;background:#fff;color:#1d1d1f;font:17px/1.75 -apple-system,BlinkMacSystemFont,"SF Pro Text","Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:.01em}
+main{max-width:680px;margin:0 auto;padding:56px 24px 96px}
+.by{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#86868b;margin-bottom:12px}
+.by img{width:24px;height:24px;border-radius:50%}
+.pr{font-size:12px;color:#86868b;text-align:center;margin:0 0 56px}
+h1{font:700 clamp(34px,8vw,52px)/1.15 -apple-system,"SF Pro Display","Hiragino Sans",sans-serif;letter-spacing:-.01em;text-align:center;margin:0 0 20px}
+.lead{font-size:clamp(19px,4.5vw,22px);line-height:1.6;color:#6e6e73;text-align:center;margin:0 auto 64px;max-width:560px}
+h2{font:700 clamp(26px,6vw,34px)/1.25 -apple-system,"SF Pro Display","Hiragino Sans",sans-serif;margin:80px 0 20px;letter-spacing:-.005em}
+p{margin:0 0 1.1em}
+.mark{color:#1d1d1f;font-weight:700}
+ol{list-style:none;padding:0;margin:0;counter-reset:n}
+ol li{counter-increment:n;padding:22px 0;border-top:1px solid #d2d2d7}
+ol li:before{content:counter(n);display:block;font:600 13px/1 -apple-system,sans-serif;color:#86868b;margin-bottom:8px}
+ol li b{display:block;font-size:20px;line-height:1.45;margin-bottom:4px}
+.memo{background:#f5f5f7;border-radius:18px;padding:28px 26px;margin:40px 0}
+.memo p{margin:.35em 0}
+.memo p:first-child{font-weight:700;margin-bottom:.8em}
+a{color:#0066cc;text-decoration:none}
+.link{text-align:center;margin:32px 0 12px}
+.link a{display:inline-block;background:#0071e3;color:#fff;font-weight:600;border-radius:980px;padding:13px 26px;font-size:16px;line-height:1.4}
+.small{font-size:13px;color:#86868b;text-align:center}
+footer{font-size:12px;line-height:1.8;color:#86868b;margin-top:96px;border-top:1px solid #d2d2d7;padding-top:18px}
 </style>
 </head>
 <body>
@@ -36,6 +43,7 @@ footer{font:12px/1.8 -apple-system,"Hiragino Sans",sans-serif;color:#999;margin-
 
 <h1>副業、調べても試しても<br>うまくいかない人へ。</h1>
 
+<p class="lead">止まっている場所を、1つ外すだけでいい。</p>
 <p>X や Threads で副業の投稿を毎日たくさん読んでいます。いちばん多い悩みは「稼ぎ方がわからない」ではありませんでした。</p>
 <p><span class="mark">「調べすぎて、どれをやればいいのか決められない」</span>。これがいちばん多いです。</p>
 <p>情報が足りないのではなく、多すぎて止まっている。なので、新しい方法を足すより、止まっている場所を1つ外すほうが早いです。よく止まる場所を書いておきます。</p>
@@ -60,8 +68,9 @@ footer{font:12px/1.8 -apple-system,"Hiragino Sans",sans-serif;color:#999;margin-
 
 <h2>ひとりで決めきれない人へ（PR）</h2>
 <p>手順が1冊にまとまった教材を決めて、最後までやる。迷い続けるより、そのほうが早い人もいます。今 Brain でよく読まれているものを1つだけ置いておきます。</p>
-<p class="link"><a href="https://brmk.io/r8YGc9" rel="sponsored noopener" target="_blank">【インスタ×AI×note】1日30分で2000万売り上げた全手順を公開 →</a></p>
-<p style="font-size:14px;color:#777">税込 20,400円（Brain）。売上の数字は販売者の申告です。中身と返金の条件は、販売ページで確かめてから決めてください。</p>
+<p style="text-align:center;font-weight:700;font-size:19px;line-height:1.5;margin-top:28px">【インスタ×AI×note】<br>1日30分で2000万売り上げた全手順を公開</p>
+<p class="link"><a href="https://brmk.io/r8YGc9" rel="sponsored noopener" target="_blank">販売ページを見る（PR）</a></p>
+<p class="small">税込 20,400円（Brain）。売上の数字は販売者の申告です。中身と返金の条件は、販売ページで確かめてから決めてください。</p>
 
 <footer>
 稼ぎ方の裏側メモ（X・Threads・Instagram・TikTok：@22iikata）<br>
